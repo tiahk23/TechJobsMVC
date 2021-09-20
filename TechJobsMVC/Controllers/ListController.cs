@@ -55,7 +55,6 @@ namespace TechJobsMVC.Controllers
                 ViewBag.title = "Jobs with " + ColumnChoices[column] + ": " + value;
             }
             ViewBag.jobs = jobs;
-
             return View();
         }
 
