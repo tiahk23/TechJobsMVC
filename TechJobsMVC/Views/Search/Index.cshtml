@@ -24,37 +24,35 @@
         <input type="submit" value="Search" />
     </form>
 
-    <hr />
+        @foreach (var jobs in ViewBag.jobs)
+        {
+            <table class="job-listing">
+                <tr>
+                    <td>Id</td>
+                    <td>@jobs.Id</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>@jobs.Name</td>
+                </tr>
+                <tr>
+                    <td>Employer</td>
+                    <td>@jobs.Employer</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>@jobs.Location</td>
+                </tr>
+                <tr>
+                    <td>Postion Type</td>
+                    <td>@jobs.PositionType</td>
+                </tr>
+                <tr>
+                    <td>Skills</td>
+                    <td>@jobs.CoreCompetency</td>
+                </tr>
 
-    @foreach (var jobs in ViewBag.jobs)
-    {
-        <table class="job-listing">
-            <tr>
-                <td>Id</td>
-                <td>@jobs.Id</td>
-            </tr>
-            <tr>
-                <td>Name</td>
-                <td>@jobs.Name</td>
-            </tr>
-            <tr>
-                <td>Employer</td>
-                <td>@jobs.Employer</td>
-            </tr>
-            <tr>
-                <td>Location</td>
-                <td>@jobs.Location</td>
-            </tr>
-            <tr>
-                <td>Postion Type</td>
-                <td>@jobs.PositionType</td>
-            </tr>
-            <tr>
-                <td>Skills</td>
-                <td>@jobs.CoreCompetency</td>
-            </tr>
-
-        </table>
-    }
-
+            </table>
+        }
+   
 </div>

@@ -10,8 +10,8 @@ using TechJobsMVC.Models;
 
 namespace TechJobsMVC.Controllers
 {
-    public class SearchController : Controller
-    {
+        public class SearchController : Controller
+        {
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -22,16 +22,18 @@ namespace TechJobsMVC.Controllers
         public IActionResult Results(string searchType, string searchTerm)
         {
             List<Job> jobs;
-            if (searchType == "")
+            if (searchType == "" || searchType is null)
             {
                jobs = JobData.FindAll();
-                
+               ViewBag.title = "All Jobs";
             }
             else
             {
                 jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
+                ViewBag.title = "Jobs with " + ListController.ColumnChoices[searchTerm] + ": " + searchTerm;
             }
             ViewBag.jobs = jobs;
+            ViewBag.columns = ListController.ColumnChoices;
             return View();
         }
     }
