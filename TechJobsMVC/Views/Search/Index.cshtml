@@ -23,36 +23,40 @@
 
         <input type="submit" value="Search" />
     </form>
+    @if (ViewBag.jobs != null)
+    {
+         <table class="job-listing">
+         @foreach (var jobs in ViewBag.jobs)
+         {
 
-        @foreach (var jobs in ViewBag.jobs)
-        {
-            <table class="job-listing">
-                <tr>
-                    <td>Id</td>
-                    <td>@jobs.Id</td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>@jobs.Name</td>
-                </tr>
-                <tr>
-                    <td>Employer</td>
-                    <td>@jobs.Employer</td>
-                </tr>
-                <tr>
-                    <td>Location</td>
-                    <td>@jobs.Location</td>
-                </tr>
-                <tr>
-                    <td>Postion Type</td>
-                    <td>@jobs.PositionType</td>
-                </tr>
-                <tr>
-                    <td>Skills</td>
-                    <td>@jobs.CoreCompetency</td>
-                </tr>
+            <tr>
+                <td>Id</td>
+                <td>@jobs.Id</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>@jobs.Name</td>
+            </tr>
+            <tr>
+                <td>Employer</td>
+                <td>@jobs.Employer</td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>@jobs.Location</td>
+            </tr>
+            <tr>
+                <td>Postion Type</td>
+                <td>@jobs.PositionType</td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td>@jobs.CoreCompetency</td>
+             </tr>
 
-            </table>
-        }
-   
-</div>
+
+         }
+         </table>
+    }
+
+    </div>
