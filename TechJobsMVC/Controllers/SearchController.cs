@@ -22,10 +22,10 @@ namespace TechJobsMVC.Controllers
         public IActionResult Results(string searchType, string searchTerm)
         {
             List<Job> jobs;
-            if (searchType == "" || searchType is null)
+            if (searchTerm == "" || searchTerm is null)
             {
-               jobs = JobData.FindAll();
-               ViewBag.title = "All Jobs";
+                jobs = JobData.FindAll();
+                ViewBag.title = "All Jobs";
             }
             else
             {

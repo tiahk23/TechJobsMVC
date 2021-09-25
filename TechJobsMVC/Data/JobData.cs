@@ -33,7 +33,7 @@ namespace TechJobsMVC.Data
 
             List<Job> jobs = new List<Job>();
 
-            if (value.ToLower().Equals("all") || value != null)
+            if (value.ToLower().Equals("all"))
             {
                 return FindAll();
             }
